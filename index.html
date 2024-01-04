@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ball bonseing </title>
+</head>
+
+<body>
+
+    <div class="bounacy"><!-- full main class  parient-->
+
+        <div class="ball-shadow"> </div><!-- outer class (child) saparate class -->
+
+        <div class="ball"></div> <!-- inner class (child) saparate class -->
+
+
+    </div>
+
+</body>
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .ball {
+        background: radial-gradient(farthest-corner at 60px 45px, blue 0%, black 50%);
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    .ball-shadow {
+
+        background: radial-gradient(50% 50%, black 0%, whitesmoke 100%);
+        width: 200px;
+        height: 50px;
+    }
+
+    .bounacy {
+        height: 100%;
+        left: 40%;
+        position: absolute;
+    }
+
+    .bounacy .ball-shadow {
+        animation-name: balls;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        bottom: 0;
+        position: absolute;
+        margin-left: -100px;
+
+    }
+
+    .bounacy .ball {
+        animation-name: balls1;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        position: absolute;
+        margin-left: -100px;
+    }
+
+
+    @keyframes balls {
+        /* this keyframes for the shadow  */
+        from {
+            bottom: 0;
+            margin-left: -100px;
+            height: 50px;
+            width: 200px;
+        }
+
+        to {
+            bottom: 20px; 
+            /* this is updated bottom for to{} function */
+            margin-left: 0;
+            height: 12px;
+            width: 15px;
+        }
+    }
+
+
+
+    @keyframes balls1 {
+        /* this keyframes for the ball */
+
+        from {
+            bottom: 20px;
+            /* this bottom is coming in @keyframes balls to{} function */
+        }
+
+        to {
+            bottom: 80%;
+        }
+
+    }
+</style>
+
+</html>
